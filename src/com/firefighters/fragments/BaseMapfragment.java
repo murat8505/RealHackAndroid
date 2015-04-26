@@ -36,7 +36,7 @@ import com.firefighters.connection.ServiceProvider;
 import com.firefighters.models.Place;
 import com.firefighters.models.PlaceInterface;
 import com.firefighters.models.PlacePrediction;
-import com.firefighters.models.PropertyResponse;
+import com.firefighters.models.Property;
 import com.firefighters.realhack.R;
 import com.firefighters.ui.PlacesSearchAdapter;
 import com.google.android.gms.maps.CameraUpdate;
@@ -47,7 +47,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
 
 /**
  * @author Harshit Pathak
@@ -306,6 +309,7 @@ public class BaseMapfragment extends Fragment implements PlaceInterface{
 		@Override
 		public void getPropertieSuccess(JsonObject response) {
 			// TODO Auto-generated method stub
+			if(response != null)
 			Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_LONG).show();
 		}
 
